@@ -22,19 +22,19 @@ export const addPlant = (seedObj) => {
 //define export fx named usePlants
 export const usePlants = () => {
     //the fx will return a copy of the array of plants (these are the plants we just pushed into the field)
-// attempt 1: field.forEach((seedObj) => {field.map((seedObj)= () => {})})
-const seededField= field.splice()
+    const seededField= field.map(seedObj => ({...seedObj}))
+// attempt at slice method: const seededField= field.splice()
 
 return seededField
 }
 
-const seed ={
-    type: 'Asparagus',
-        height: 24,
-        output: 4
-}
+// const seed ={
+//     type: 'Asparagus',
+//         height: 24,
+//         output: 4
+// }
 
-console.log(addPlant(seed))
+//console.log(addPlant(seed))
 console.log(usePlants())
 
 

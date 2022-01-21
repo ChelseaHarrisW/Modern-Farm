@@ -1,50 +1,54 @@
-import {createPlan} from './plan.js'
+import { createPlan } from './plan.js'
 import { createAsparagus } from "./seeds/asparagus.js"
 import { createCorn } from "./seeds/corn.js"
 import { createPotato } from "./seeds/potato.js"
 import { createSoybean } from "./seeds/soybean.js"
 import { createSunflower } from "./seeds/sunflower.js"
 import { createWheat } from "./seeds/wheat.js"
-import { addPlant , usePlants } from "./field.js"
+import { addPlant, usePlants } from "./field.js"
 
 
 
 
 
 // define export fx plantSeeds (year's planing plan)
-export const plantSeeds = (plan) => {
-    
-    
-}
-for (const plan of yearlyPlan) {
-    for (const plantType of plan) {
-        if (plantType === "Asparagus") {
-            const asparagusSeed = createAsparagus()
-            addPlant(asparagusSeed)
-        }
-        else if (plantType === "Corn") {
+export const plantSeeds = (yearlyPlan) => {
+
+
+
+    for (const plan of yearlyPlan) {
+        for (const plantType of plan) {
+            if (plantType === "Asparagus") {
+                const asparagusSeed = createAsparagus()
+                addPlant(asparagusSeed)
+            }
+            else if (plantType === "Corn") {
                 const cornSeed = createCorn()
                 addPlant(cornSeed)
-            }
-        else if (plantType === "Potato") {
+                for (const corn of cornSeed)
+                    addPlant(corn)
+                }
+            else if (plantType === "Potato") {
                 const potatoSeed = createPotato()
                 addPlant(potatoSeed)
             }
-        else if (plantType === "Soybean") {
+            else if (plantType === "Soybean") {
                 const soybeanSeed = createSoybean()
                 addPlant(soybeanSeed)
             }
-        else if (plantType === "Sunflower") {
+            else if (plantType === "Sunflower") {
                 const sunflowerSeed = createSunflower()
                 addPlant(sunflowerSeed)
             }
-        else if (plantType === "Wheat") {
+            else if (plantType === "Wheat") {
                 const wheatSeed = createWheat()
                 addPlant(wheatSeed)
             }
+        }
     }
+    return usePlants()
 }
-usePlants()
+
 //invision: this plan is an array that has 4 rows in the field to be plants
 
 //iterate through the plan array to create the 4 rows that
