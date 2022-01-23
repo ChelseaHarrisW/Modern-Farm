@@ -14,7 +14,7 @@ export const addPlant = (seedObj) => {
         }
     } else {
     field.push(seedObj)
-    return seedObj
+    
 }
 } 
 
@@ -22,10 +22,10 @@ export const addPlant = (seedObj) => {
 //define export fx named usePlants
 export const usePlants = () => {
     //the fx will return a copy of the array of plants (these are the plants we just pushed into the field)
-    const seededField= field.map(seedObj => ({...seedObj}))
+    let plantsInMyField= field.map(plant => ({...plant}))
 // attempt at slice method: const seededField= field.splice()
 
-return seededField
+return plantsInMyField
 }
 
 // const seed ={
@@ -35,7 +35,7 @@ return seededField
 // }
 
 //console.log(addPlant(seed))
-console.log(usePlants())
+
 
 
 
