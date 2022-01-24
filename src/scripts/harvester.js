@@ -6,22 +6,27 @@ export const harvestPlants = (plantArray) => {
     let seeds = []
     for (const plant of plantArray) {
         //on each plant get the seed object from the array
-        if (plantType === "Corn") {
+        if (plant.type === "Corn") {
             // divide the corn obj by 2?
-            const cornOutput = plant.output / 2
-                seeds.push(cornOutput)
+            const cornOutput = plant.output / 2;
+            for (let index = 0; index < cornOutput; index++) {
+                seeds.push(plant)
+            }
+          
+              
             
         } else {
             //add the seed object to the array
-            {
+            
+            for (let index = 0; index < plant.output; index++) {
                 seeds.push(plant)
             }
 
 
         }
         // remimber expected outcome is an array of seed objects
-        return seedObjects
     }
+    return seeds
 }
 
 //iterate the array of growing plants and
