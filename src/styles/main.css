@@ -19,7 +19,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .blue {
-    background-color: aliceblue;
+    text-emphasis-color: aliceblue;
 }
 
 .green {
@@ -34,3 +34,15 @@ h1,h2,h3,h4,h5,h6 {
     background-color: darksalmon;
 }
 
+
+.container {
+    background-color: rgb(16, 102, 13);
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.plant {
+    flex-basis: 10em;
+}
